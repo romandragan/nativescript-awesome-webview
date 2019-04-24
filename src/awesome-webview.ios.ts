@@ -7,10 +7,12 @@ class SFSafariViewControllerDelegateImpl extends NSObject implements SFSafariVie
 
   private _owner: WeakRef<any>;
   private _callback: Function;
-  public static initWithOwnerCallback(owner: WeakRef<any>, callback: Function): SFSafariViewControllerDelegateImpl {
+  private _activityItems: NSArray;
+  public static initWithOwnerCallback(owner: WeakRef<any>, callback: Function, activityItems: NSArray): SFSafariViewControllerDelegateImpl {
     let delegate = <SFSafariViewControllerDelegateImpl>SFSafariViewControllerDelegateImpl.new();
     delegate._owner = owner;
     delegate._callback = callback;
+    delegate._activityItems = activityItems;
     return delegate;
   }
 
@@ -23,6 +25,11 @@ class SFSafariViewControllerDelegateImpl extends NSObject implements SFSafariVie
       this._callback(true);
     }
   }
+
+  safariViewControllerActivityItemsForURLTitle = function (controller, URL, title) {
+    console.log('safariViewControllerActivityItemsForURLTitle', controller, URL, title, this._activityItems);
+    return this._activityItems;
+  };
 }
 export function init() {}
 
@@ -41,7 +48,11 @@ export function openWebView(options: AwesomeWebviewOptions): void {
     sfc.preferredControlTintColor = new Color(options.toolbarControlsColor).ios;
   }
 
-  sfc.delegate = SFSafariViewControllerDelegateImpl.initWithOwnerCallback(new WeakRef({}), options.isClosed);
+  if (options.dismissButtonStyle) {
+    sfc.dismissButtonStyle = options.dismissButtonStyle;
+  }
+
+  sfc.delegate = SFSafariViewControllerDelegateImpl.initWithOwnerCallback(new WeakRef({}), options.isClosed, options.activityItems);
 
   let app = utils.ios.getter(UIApplication, UIApplication.sharedApplication);
 
