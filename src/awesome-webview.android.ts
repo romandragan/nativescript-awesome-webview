@@ -45,7 +45,12 @@ export function openWebView(options: AwesomeWebviewOptions): void {
     intentBuilder.setToolbarColor(new Color(options.toolbarColor).android);
   }
 
-  intentBuilder.addDefaultShareMenuItem();
+  if (options.menuItems) {
+    options.menuItems.forEach((item) => {
+      intentBuilder.addMenuItem(item.title, item.pendingIntent);
+    });
+  }
+
   intentBuilder.enableUrlBarHiding();
 
   intentBuilder.build()
@@ -54,4 +59,3 @@ export function openWebView(options: AwesomeWebviewOptions): void {
       android.net.Uri.parse(options.url)
     );
 }
-
