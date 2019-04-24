@@ -7,8 +7,8 @@ class SFSafariViewControllerDelegateImpl extends NSObject implements SFSafariVie
 
   private _owner: WeakRef<any>;
   private _callback: Function;
-  private _activityItems: NSArray;
-  public static initWithOwnerCallback(owner: WeakRef<any>, callback: Function, activityItems: NSArray): SFSafariViewControllerDelegateImpl {
+  private _activityItems: NSArray<UIActivity>;
+  public static initWithOwnerCallback(owner: WeakRef<any>, callback: Function, activityItems: NSArray<UIActivity>): SFSafariViewControllerDelegateImpl {
     let delegate = <SFSafariViewControllerDelegateImpl>SFSafariViewControllerDelegateImpl.new();
     delegate._owner = owner;
     delegate._callback = callback;
@@ -26,8 +26,8 @@ class SFSafariViewControllerDelegateImpl extends NSObject implements SFSafariVie
     }
   }
 
-  safariViewControllerActivityItemsForURLTitle = function (controller, URL, title) {
-    console.log('safariViewControllerActivityItemsForURLTitle', controller, URL, title, this._activityItems);
+  safariViewControllerActivityItemsForURLTitle(controller: SFSafariViewController, URL: NSURL, title: string): NSArray<UIActivity> {
+    console.log('Delegate, safariViewControllerActivityItemsForURLTitle');
     return this._activityItems;
   };
 }

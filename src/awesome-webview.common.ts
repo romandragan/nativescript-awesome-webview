@@ -10,6 +10,6 @@ export interface AwesomeWebviewOptions {
   toolbarControlsColor?: string;
   isClosed?: Function;
   dismissButtonStyle?: SFSafariViewControllerDismissButtonStyleDone | SFSafariViewControllerDismissButtonStyleClose | SFSafariViewControllerDismissButtonStyleCancel;
-  activityItems?: NSArray;
-  menuItems?: Array;
+  activityItems?: NSArray<UIActivity>;
+  menuItems?: Array<any>;
 }
