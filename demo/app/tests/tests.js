@@ -1,4 +1,4 @@
-var AwesomeWebview = require("nativescript-awesome-webview").AwesomeWebview;
+var AwesomeWebview = require("nativescript-awesome-webview-with-custom-menu-items").AwesomeWebview;
 var awesomeWebview = new AwesomeWebview();
 
 describe("greet function", function() {

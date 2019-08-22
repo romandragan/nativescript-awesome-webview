@@ -1,4 +1,4 @@
-# nativescript-awesome-webview
+# nativescript-awesome-webview-with-custom-menu-items
 
 <!-- badges here -->
 
@@ -18,13 +18,13 @@ As of now, there aren't any prerequisites. This should work with any device, any
 For `tns` projects (Angular, Typescript, Javascript)
 
 ```shell
-tns plugin add nativescript-awesome-webview
+tns plugin add nativescript-awesome-webview-with-custom-menu-items
 ```
 
 For `vue-cli` projects (Nativescript-Vue)
 
 ```shell
-npm install nativescript-awesome-webview
+npm install nativescript-awesome-webview-with-custom-menu-items
 ```
 
 ## Usage 
@@ -34,13 +34,13 @@ npm install nativescript-awesome-webview
 Javascript - 
 
 ```javascript
-const {init, openWebView} = require('nativescript-awesome-webview');
+const {init, openWebView} = require('nativescript-awesome-webview-with-custom-menu-items');
 ```
 
 Typescript - 
 
 ```typescript
-import {init, openWebView} from 'nativescript-awesome-webview';
+import {init, openWebView} from 'nativescript-awesome-webview-with-custom-menu-items';
 ```
 
 ### 1. Initialise (optional, only Android) 

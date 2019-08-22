@@ -1,6 +1,6 @@
 
-declare module android {
-  export module support {
+declare module androidx {
+  export module browser {
     export module customtabs {
       export class CustomTabsIntent {
         launchUrl(context: android.content.Context, url: android.net.Uri): void;
@@ -9,11 +9,12 @@ declare module android {
         export class Builder {
           constructor();
           constructor(session: CustomTabsSession);
-          build(): android.support.customtabs.CustomTabsIntent;
+          build(): androidx.browser.customtabs.CustomTabsIntent;
           setShowTitle(showTitle: boolean): this;
           setToolbarColor(color: number): this;
           addDefaultShareMenuItem(): this;
           enableUrlBarHiding(): this;
+          addMenuItem(title: string, pendingIntent: any);
         }
       }
 
