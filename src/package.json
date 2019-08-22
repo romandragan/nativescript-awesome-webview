@@ -1,6 +1,6 @@
 {
-    "name": "nativescript-awesome-webview",
-    "version": "0.1.1",
+    "name": "nativescript-awesome-webview-with-custom-menu-items",
+    "version": "1.0.1",
     "description": "Awesome WebViews for all NativeScript Apps!",
     "main": "awesome-webview",
     "typings": "index.d.ts",
@@ -41,8 +41,8 @@
         "SafariViewController"
     ],
     "author": {
-        "name": "Arnav Gupta",
-        "email": "championswimmer@gmail.com"
+        "name": "Roman Dragan",
+        "email": "roman@dragan.com.ua"
     },
     "bugs": {
         "url": "https://github.com/championswimmer/nativescript-awesome-webview/issues"
