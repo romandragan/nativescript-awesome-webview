@@ -12,4 +12,5 @@ export interface AwesomeWebviewOptions {
   dismissButtonStyle?: SFSafariViewControllerDismissButtonStyleDone | SFSafariViewControllerDismissButtonStyleClose | SFSafariViewControllerDismissButtonStyleCancel;
   activityItems?: NSArray<UIActivity>;
   menuItems?: Array<any>;
+  headers?: any;
 }

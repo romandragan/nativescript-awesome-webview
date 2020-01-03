@@ -4,6 +4,7 @@ declare module androidx {
     export module customtabs {
       export class CustomTabsIntent {
         launchUrl(context: android.content.Context, url: android.net.Uri): void;
+        intent: android.content.Intent;
       }
       namespace CustomTabsIntent {
         export class Builder {

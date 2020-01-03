@@ -53,9 +53,17 @@ export function openWebView(options: AwesomeWebviewOptions): void {
 
   intentBuilder.enableUrlBarHiding();
 
-  intentBuilder.build()
-    .launchUrl(
-      context(),
-      android.net.Uri.parse(options.url)
-    );
+  const customTabsIntent = intentBuilder.build();
+
+  if (options.headers) {
+    const headers = new android.os.Bundle();
+
+    Object.keys(options.headers).forEach(headerName => {
+      headers.putString(headerName, options.headers[headerName]);
+    });
+
+    customTabsIntent.intent.putExtra(android.provider.Browser.EXTRA_HEADERS, headers);
+  }
+
+  customTabsIntent.launchUrl(context(), android.net.Uri.parse(options.url));
 }
