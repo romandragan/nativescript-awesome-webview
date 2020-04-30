@@ -13,4 +13,5 @@ export interface AwesomeWebviewOptions {
   activityItems?: NSArray<UIActivity>;
   menuItems?: Array<any>;
   headers?: any;
+  iosViewController?: UIViewController;
 }

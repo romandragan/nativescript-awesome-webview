@@ -54,9 +54,9 @@ export function openWebView(options: AwesomeWebviewOptions): void {
 
   sfc.delegate = SFSafariViewControllerDelegateImpl.initWithOwnerCallback(new WeakRef({}), options.isClosed, options.activityItems);
 
-  let app = utils.ios.getter(UIApplication, UIApplication.sharedApplication);
+  let app = UIApplication.sharedApplication;
 
   const animated = true;
   const completionHandler = null;
-  app.keyWindow.rootViewController.presentViewControllerAnimatedCompletion(sfc, animated, completionHandler);
+  (options.iosViewController || app.keyWindow.rootViewController).presentViewControllerAnimatedCompletion(sfc, animated, completionHandler);
 }
