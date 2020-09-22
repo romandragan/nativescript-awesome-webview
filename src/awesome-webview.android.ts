@@ -1,16 +1,15 @@
 import { AwesomeWebviewOptions } from './awesome-webview.common';
-import * as app from 'tns-core-modules/application';
+import { Application, Color } from '@nativescript/core';
 import CustomTabsClient = androidx.browser.customtabs.CustomTabsClient;
 import CustomTabsServiceConnection = androidx.browser.customtabs.CustomTabsServiceConnection;
 import CustomTabsSession = androidx.browser.customtabs.CustomTabsSession;
 import CustomTabsIntent = androidx.browser.customtabs.CustomTabsIntent;
-import {Color} from 'tns-core-modules/color';
 
 const CUSTOM_TAB_PACKAGE_NAME = "com.android.chrome";
 let mCustomTabsClient: CustomTabsClient = null;
 let mCustomTabsServiceConnection: CustomTabsServiceConnection = null;
 let mCustomTabsSession: CustomTabsSession = null;
-const context = () => app.android.startActivity || app.android.context;
+const context = () => Application.android.startActivity || Application.android.context;
 
 export function init(): void {
 
