@@ -64,5 +64,9 @@ export function openWebView(options: AwesomeWebviewOptions): void {
     customTabsIntent.intent.putExtra(android.provider.Browser.EXTRA_HEADERS, headers);
   }
 
-  customTabsIntent.launchUrl(context(), android.net.Uri.parse(options.url));
+  // customTabsIntent.launchUrl(context(), android.net.Uri.parse(options.url));
+
+  customTabsIntent.intent.setData(android.net.Uri.parse(options.url));
+
+  context().startActivityForResult(customTabsIntent.intent, 1010);
 }
