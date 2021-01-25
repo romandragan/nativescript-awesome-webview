@@ -1,6 +1,6 @@
 {
     "name": "nativescript-awesome-webview-with-custom-menu-items",
-    "version": "60.1.1",
+    "version": "70.1.1",
     "description": "Awesome WebViews for all NativeScript Apps!",
     "main": "awesome-webview",
     "typings": "index.d.ts",
